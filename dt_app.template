@@ -1,0 +1,53 @@
+%%% -*- mode: erlang -*- =================================== [ dt_app.template ]
+
+{description, "Complete OTP application structure."}.
+{variables,
+ [{name, "myapp", "Name of the OTP application."},
+  {desc, "An OTP application.", "Short description of the app."},
+  {github_user, "deadtrickster", "Your GitHub username."},
+  {github_repo, "myapp", "Name of the GitHub repo."}
+ ]}.
+
+%%% ======================================================== [ Top-level files ]
+
+{template, ".dir-locals.el", "{{name}}/.dir-locals.el"}.
+{file, ".gitignore", "{{name}}/.gitignore"}.
+{file, ".travis.yml", "{{name}}/.travis.yml"}.
+{template, "LICENSE", "{{name}}/LICENSE"}.
+{template, "README.markdown", "{{name}}/README.md"}.
+{file, "elvis.config", "{{name}}/elvis.config"}.
+{template, "rebar.config", "{{name}}/rebar.config"}.
+{file, "rebar.config.script", "{{name}}/rebar.config.script"}.
+
+%%% ================================================================ [ Scripts ]
+
+{file, "bin/checks.sh", "{{name}}/bin/checks.sh"}.
+{chmod, "{{name}}/bin/checks.sh", 8#755}.
+{file, "bin/ensure-elvis.sh", "{{name}}/bin/ensure-elvis.sh"}.
+{chmod, "{{name}}/bin/ensure-elvis.sh", 8#755}.
+{file, "bin/pre-commit.sh", "{{name}}/bin/pre-commit.sh"}.
+{chmod, "{{name}}/bin/pre-commit.sh", 8#755}.
+
+%%% ============================================================= [ benchmark/ ]
+
+{dir, "{{name}}/benchmark"}.
+
+%%% =================================================================== [ doc/ ]
+
+{template, "doc/overview.md", "{{name}}/doc/overview.md"}.
+
+%%% =============================================================== [ include/ ]
+
+{dir, "{{name}}/include"}.
+
+%%% =================================================================== [ src/ ]
+
+{template, "src/app.erl", "{{name}}/src/{{name}}_app.erl"}.
+{template, "src/sup.erl", "{{name}}/src/{{name}}_sup.erl"}.
+{template, "src/dt_app.app.src", "{{name}}/src/{{name}}.app.src"}.
+
+%%% ================================================================== [ test/ ]
+
+{file, "test/.dir-locals.el", "{{name}}/test/.dir-locals.el"}.
+
+%%% ==================================================================== [ EOF ]

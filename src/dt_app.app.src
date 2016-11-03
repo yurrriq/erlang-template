@@ -1,0 +1,16 @@
+{application, {{name}},
+ [{description, "{{desc}}"},
+  {vsn, "0.0.1"},
+  {registered, []},
+  {mod, {{{name}}_app, []}},
+  {applications,
+   [kernel,
+    stdlib
+   ]},
+  {env, []},
+  {modules, []},
+
+  {maintainers, ["{{author_name}}"]},
+  {licenses, ["MIT"]},
+  {links, [{"GitHub", "https://github.com/{{github_user}}/{{github_repo}}"}]}
+ ]}.

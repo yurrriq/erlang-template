@@ -16,4 +16,5 @@ log
 erl_crash.dump
 .rebar
 logs
-_build
+./elvis
+./rebar3
